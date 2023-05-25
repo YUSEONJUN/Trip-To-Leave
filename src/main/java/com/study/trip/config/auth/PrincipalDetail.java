@@ -1,5 +1,6 @@
 package com.study.trip.config.auth;
 
+import com.study.trip.domain.board.Board;
 import lombok.Getter;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -15,6 +16,7 @@ import com.study.trip.domain.user.User;
 public class PrincipalDetail implements UserDetails {
 
 	private User user;
+	private Board user_Id;
 	private static final long serialVersionUID = 1L;
 
 	//일반 사용자
@@ -25,7 +27,7 @@ public class PrincipalDetail implements UserDetails {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	public void setUser_Id(Board user_Id) {this.user_Id = user_Id;}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> collection = new ArrayList<>();

@@ -1,6 +1,8 @@
 package com.study.trip.service;
 
 
+import com.study.trip.domain.board.Board;
+import com.study.trip.domain.board.BoardRepository;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -11,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.study.trip.config.auth.PrincipalDetail;
 import com.study.trip.domain.user.User;
 import com.study.trip.domain.user.UserRepository;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -39,6 +43,11 @@ public class UserService {
 		principalDetail.setUser(userEntity); //시큐리티 세션 정보 변경
 		return userEntity.getId();
 	}
+
+
+
+
+
 
 
 }

@@ -44,13 +44,15 @@ public class Board extends BaseTimeEntity {
 	private int count; //조회수
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "userId")
+	@JoinColumn(name = "userId	")
 	private User user;
 
 	public void update(String title, String content) {
 		this.title = title;
 		this.content = content;
 	}
+
+
 
 	@OrderBy("id desc")
 	@JsonIgnoreProperties({"board"})

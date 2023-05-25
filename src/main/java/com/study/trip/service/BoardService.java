@@ -1,5 +1,7 @@
 package com.study.trip.service;
 
+import com.study.trip.config.auth.PrincipalDetail;
+import com.study.trip.domain.reply.Reply;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +35,10 @@ public class BoardService {
 	@Transactional(readOnly = true)
 	public Page<Board> findByTitleContainingOrContentContaining(String title, String content, Pageable pageable) {
 		return boardRepository.findByTitleContainingOrContentContaining(title, content, pageable);
+	}
+	@Transactional
+	public Page<Board> findByUser_Id(Long userId, Pageable pageable) {
+		return boardRepository.findByUser_Id(userId, pageable);
 	}
 
 	/**
@@ -68,6 +74,20 @@ public class BoardService {
 	@Transactional
 	public int updateCount(Long id) {
 		return boardRepository.updateCount(id);
+	}
+
+	public void search(Long boardId, User user) {
+		Board board = boardRepository.findById(boardId).orElseThrow(() -> new IllegalArgumentException("해당 boardId가 없습니다. id=" + boardId));
+
+	}
+
+	/**
+	 *
+	 * 검색 로직
+	 */
+	@Transactional
+	public void mypost(Long userId) {
+		Board board = boardRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("해당 id가 없습니다. id=" + userId));
 	}
 
 }

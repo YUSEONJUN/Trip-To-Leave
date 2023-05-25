@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.study.trip.service.BoardService;
-
+import com.study.trip.domain.board.Board;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -35,4 +35,13 @@ public class BoardController {
 		boardService.updateCount(id);
 		return "layout/board/board-detail";
 	}
+
+	@GetMapping("/user/mypage/mypost/{id}")
+	public String mydetail(@PathVariable Long id, Model model) {
+		model.addAttribute("board", boardService.detail(id));
+		boardService.updateCount(id);
+		return "layout/board/board-detail";
+	}
+
+
 }
