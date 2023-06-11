@@ -12,6 +12,9 @@ spring:
       use-new-id-generate-mappings: false
     show-sql: true
     properties:
+      jdbc:
+        lob:
+          non_contextual_creation: true
       hibernate.format_sql: true
 
   thymeleaf:
@@ -24,8 +27,7 @@ spring:
     livereload:
       enabled: true
 
-cos:
-  key: root
+
 
 
 
