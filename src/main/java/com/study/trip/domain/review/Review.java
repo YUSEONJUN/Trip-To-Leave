@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.study.trip.domain.BaseTimeEntity;
-import com.study.trip.domain.board.Board;
-import com.study.trip.domain.reply.Reply;
 import com.study.trip.domain.reviewReply.ReviewReply;
 import com.study.trip.domain.user.User;
 
