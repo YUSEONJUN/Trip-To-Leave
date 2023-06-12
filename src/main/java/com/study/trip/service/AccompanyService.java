@@ -8,7 +8,7 @@ import com.study.trip.domain.Accompany.Accompany;
 import com.study.trip.domain.Accompany.AccompanyRepository;
 import com.study.trip.domain.board.Board;
 import com.study.trip.domain.board.BoardRepository;
-import com.study.trip.domain.user.User;
+import com.study.trip.domain.user.Users;
 
 
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class AccompanyService {
 	private final BoardRepository boardRepository;
 
 	@Transactional
-	public void accompanySave(Long boardId, Accompany accompany, User user) {
+	public void accompanySave(Long boardId, Accompany accompany, Users user) {
 		Board board = boardRepository.findById(boardId).orElseThrow(() -> new IllegalArgumentException("해당 boardId가 없습니다. id=" + boardId));
 		accompany.save(board, user);
 		accompanyRepository.save(accompany);

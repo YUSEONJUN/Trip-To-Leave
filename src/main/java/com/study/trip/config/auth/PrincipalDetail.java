@@ -10,27 +10,27 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
-import com.study.trip.domain.user.User;
+import com.study.trip.domain.user.Users;
 
 @Getter
 public class PrincipalDetail implements UserDetails, OAuth2User {
 
-	private User user;
+	private Users user;
 	private static final long serialVersionUID = 1L;
 	private Map<String, Object> attributes;
 
 	//일반 사용자
-	public PrincipalDetail(User user) {
+	public PrincipalDetail(Users user) {
 		this.user = user;
 	}
 
 	//OAuth 사용자
-	public PrincipalDetail(User user, Map<String, Object> attributes) {
+	public PrincipalDetail(Users user, Map<String, Object> attributes) {
 		this.user = user;
 		this.attributes = attributes;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 

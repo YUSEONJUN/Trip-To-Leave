@@ -1,7 +1,7 @@
 package com.study.trip.dto.review;
 
 import com.study.trip.domain.review.Review;
-import com.study.trip.domain.user.User;
+import com.study.trip.domain.user.Users;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ public class ReviewSaveRequestDto {
 	private String title;
 	private String content;
 	private int count;
-	private User user;
+	private Users user;
 
 
 	public Review toEntity() {
@@ -29,7 +29,7 @@ public class ReviewSaveRequestDto {
 			.build();
 	}
 
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 

@@ -1,13 +1,12 @@
 package com.study.trip.domain.Accompany;
 
-import javax.persistence.*;
 
 
 import com.study.trip.domain.BaseTimeEntity;
 import com.study.trip.domain.board.Board;
-import com.study.trip.domain.user.User;
+import com.study.trip.domain.user.Users;
 
-
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,13 +25,13 @@ public class Accompany extends BaseTimeEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
-	private User user;
+	private Users user;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "boardId")
 	private Board board;
 
-	public void save(Board board, User user) {
+	public void save(Board board, Users user) {
 		this.board = board;
 		this.user = user;
 	}

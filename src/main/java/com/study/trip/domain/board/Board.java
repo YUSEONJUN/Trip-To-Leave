@@ -2,12 +2,11 @@ package com.study.trip.domain.board;
 
 import java.util.List;
 
-import javax.persistence.*;
-
+import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.study.trip.domain.BaseTimeEntity;
 import com.study.trip.domain.reply.Reply;
-import com.study.trip.domain.user.User;
+import com.study.trip.domain.user.Users;
 
 
 import lombok.AllArgsConstructor;
@@ -37,7 +36,7 @@ public class Board extends BaseTimeEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
-	private User user;
+	private Users user;
 	private String startday;
 	private String lastday;
 	private int pnum;

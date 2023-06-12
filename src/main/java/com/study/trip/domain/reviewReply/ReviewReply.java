@@ -1,12 +1,10 @@
 package com.study.trip.domain.reviewReply;
 
-import javax.persistence.*;
-
+import jakarta.persistence.*;
 
 import com.study.trip.domain.BaseTimeEntity;
-import com.study.trip.domain.board.Board;
 import com.study.trip.domain.review.Review;
-import com.study.trip.domain.user.User;
+import com.study.trip.domain.user.Users;
 
 
 import lombok.AllArgsConstructor;
@@ -34,10 +32,10 @@ public class ReviewReply extends BaseTimeEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	private User user;
+	private Users user;
 
 
-	public void save(Review review, User user) {
+	public void save(Review review, Users user) {
 		this.review = review;
 		this.user = user;
 	}

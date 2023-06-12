@@ -16,7 +16,7 @@ import com.study.trip.config.oauth.provider.GoogleUserInfo;
 import com.study.trip.config.oauth.provider.NaverUserInfo;
 import com.study.trip.config.oauth.provider.OAuth2UserInfo;
 import com.study.trip.domain.user.Role;
-import com.study.trip.domain.user.User;
+import com.study.trip.domain.user.Users;
 import com.study.trip.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -64,17 +64,17 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		String email = oAuth2UserInfo.getEmail();
 		Role role = Role.USER;
 
-		Optional<User> userOptional = userRepository.findByProviderAndProviderId(oAuth2UserInfo.getProvider(),
+		Optional<Users> userOptional = userRepository.findByProviderAndProviderId(oAuth2UserInfo.getProvider(),
 			oAuth2UserInfo.getProviderId());
 
-		User user;
+		Users user;
 
 		if (userOptional.isPresent()) {
 			user = userOptional.get();
 			user.setEmail(oAuth2UserInfo.getEmail());
 			userRepository.save(user);
 		} else {
-			user = User.builder()
+			user = Users.builder()
 				.username(username)
 				.password(password)
 				.email(email)
