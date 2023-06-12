@@ -19,7 +19,6 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
 	private final PrincipalDetailService principalDetailService;
 	private final PrincipalOauth2UserService principalOauth2UserService;
 
