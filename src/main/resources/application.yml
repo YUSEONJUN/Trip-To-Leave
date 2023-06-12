@@ -28,10 +28,6 @@ spring:
     livereload:
       enabled: true
 
-logging:
-  level:
-    root: debug
-    com.study.trip: debug
 
 
 

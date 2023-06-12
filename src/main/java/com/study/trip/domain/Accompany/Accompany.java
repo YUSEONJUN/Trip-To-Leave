@@ -1,16 +1,13 @@
 package com.study.trip.domain.Accompany;
 
+import javax.persistence.*;
+
+
 import com.study.trip.domain.BaseTimeEntity;
 import com.study.trip.domain.board.Board;
 import com.study.trip.domain.user.User;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -34,27 +31,6 @@ public class Accompany extends BaseTimeEntity {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "boardId")
 	private Board board;
-
-
-	private boolean accepted;
-
-	private boolean attended;
-
-	public void accept() {
-		this.accepted = true;
-	}
-
-	public void reject() {
-		this.accepted = false;
-	}
-	// 생략
-	public void attend() {
-		this.attended = true;
-	}
-
-	public void absent() {
-		this.attended = false;
-	}
 
 	public void save(Board board, User user) {
 		this.board = board;

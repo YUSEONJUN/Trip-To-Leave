@@ -2,23 +2,14 @@ package com.study.trip.domain.board;
 
 import java.util.List;
 
+import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.study.trip.domain.BaseTimeEntity;
 import com.study.trip.domain.reply.Reply;
 import com.study.trip.domain.user.User;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OrderBy;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -66,7 +57,7 @@ public class Board extends BaseTimeEntity {
 		this.city=city;
 		this.state= state;
 	}
-	
+
 	@OrderBy("id desc")
 	@JsonIgnoreProperties({"board"})
 	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)

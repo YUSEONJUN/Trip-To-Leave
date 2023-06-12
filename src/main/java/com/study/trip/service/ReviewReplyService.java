@@ -1,5 +1,7 @@
 package com.study.trip.service;
 
+
+
 import org.springframework.stereotype.Service;
 
 import com.study.trip.domain.review.Review;
@@ -8,7 +10,7 @@ import com.study.trip.domain.reviewReply.ReviewReply;
 import com.study.trip.domain.reviewReply.ReviewReplyRepository;
 import com.study.trip.domain.user.User;
 
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

@@ -15,6 +15,7 @@
       <th scope="col">글 번호</th>
       <th scope="col">작성자</th>
       <th scope="col">조회수</th>
+      <th scope="col">동행신청</th>
     </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
       <th scope="row" th:text="${board.id}" id="id"></th>
       <td th:text="${board.user.nickname}"></td>
       <td th:text="${board.count}"></td>
+      <button id="accompany-btn-save" type="button" class="btn btn-dark mt-3">동행신청</button>
     </tr>
     </tbody>
   </table>
@@ -60,7 +62,7 @@
         <button class="btn btn-danger" id="btn-delete">삭제</button>
     </span>
   <button class="btn btn-secondary" onclick="history.back()">뒤로</button>
-  <button id="accompany-btn-save" type="button" th:value="${board.id}" class="btn btn-dark mt-3">동행신청</button>
+
 
   <div class="card mb-2 mt-5">
 

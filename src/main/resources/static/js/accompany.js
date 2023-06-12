@@ -13,9 +13,8 @@ let accompanyIndex = {
         console.log(boardId);
         $.ajax({
             type: "POST",
-            url: `/board/{boardId}/accompany`,
+            url: `/board/${boardId}/accompany`,
             contentType: "application/json; charset=utf-8",
-
             dataType: "json"
         }).done(function (res) {
             alert("동행신청이 완료되었습니다..");

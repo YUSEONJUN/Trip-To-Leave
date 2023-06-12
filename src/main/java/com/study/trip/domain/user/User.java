@@ -1,15 +1,11 @@
 package com.study.trip.domain.user;
 
 
+
+
 import com.study.trip.domain.BaseTimeEntity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -76,4 +72,3 @@ public class User extends BaseTimeEntity {
 		this.email = email;
 	}
 }
-

@@ -1,6 +1,5 @@
 package com.study.trip.dto.review;
 
-import com.study.trip.domain.board.Board;
 import com.study.trip.domain.review.Review;
 import com.study.trip.domain.user.User;
 

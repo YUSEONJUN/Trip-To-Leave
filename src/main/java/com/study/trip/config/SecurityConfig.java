@@ -42,7 +42,7 @@ public class SecurityConfig {
 			.and()
 			.cors().and().csrf().disable()
 			.authorizeHttpRequests()
-			.requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**").permitAll()
+			.antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.formLogin()
@@ -63,7 +63,7 @@ public class SecurityConfig {
 
 	@Bean
 	public WebSecurityCustomizer webSecurityCustomizer() {
-		return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/webjars/**");
+		return (web) -> web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**");
 	}
 
 

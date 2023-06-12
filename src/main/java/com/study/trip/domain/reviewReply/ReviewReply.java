@@ -1,17 +1,14 @@
 package com.study.trip.domain.reviewReply;
 
+import javax.persistence.*;
+
+
 import com.study.trip.domain.BaseTimeEntity;
 import com.study.trip.domain.board.Board;
 import com.study.trip.domain.review.Review;
 import com.study.trip.domain.user.User;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
