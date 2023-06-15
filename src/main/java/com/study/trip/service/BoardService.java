@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.study.trip.domain.board.Board;
 import com.study.trip.domain.board.BoardRepository;
-import com.study.trip.domain.user.Users;
+import com.study.trip.domain.user.User;
 import com.study.trip.dto.board.BoardSaveRequestDto;
 import com.study.trip.dto.board.BoardUpdateRequestDto;
 
@@ -22,7 +22,7 @@ public class BoardService {
 	 * 글작성 로직
 	 */
 	@Transactional
-	public Long save(BoardSaveRequestDto boardSaveRequestDto, Users user) {
+	public Long save(BoardSaveRequestDto boardSaveRequestDto, User user) {
 		boardSaveRequestDto.setUser(user);
 		return boardRepository.save(boardSaveRequestDto.toEntity()).getId();
 	}

@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.study.trip.domain.BaseTimeEntity;
 import com.study.trip.domain.reviewReply.ReviewReply;
-import com.study.trip.domain.user.Users;
+import com.study.trip.domain.user.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,7 +36,7 @@ public class Review extends BaseTimeEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
-	private Users user;
+	private User user;
 
 	public void update(String title, String content) {
 		this.title = title;

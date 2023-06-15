@@ -1,7 +1,7 @@
 package com.study.trip.dto.user;
 
 import com.study.trip.domain.user.Role;
-import com.study.trip.domain.user.Users;
+import com.study.trip.domain.user.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,8 +20,8 @@ public class UserSaveRequestDto {
 	private String nickname;
 	private Role role;
 
-	public Users toEntity() {
-		return Users.builder()
+	public User toEntity() {
+		return User.builder()
 			.username(username)
 			.password(password)
 			.email(email)

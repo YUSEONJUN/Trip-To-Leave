@@ -6,7 +6,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import com.study.trip.config.auth.PrincipalDetail;
-import com.study.trip.domain.user.Users;
+import com.study.trip.domain.user.User;
 import com.study.trip.dto.user.UserSaveRequestDto;
 import com.study.trip.service.UserService;
 
@@ -28,7 +28,7 @@ public class UserApiController {
 	 * 회원수정 API
 	 */
 	@PutMapping("/api/v1/user")
-	public Long update(@RequestBody Users user, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+	public Long update(@RequestBody User user, @AuthenticationPrincipal PrincipalDetail principalDetail) {
 		userService.update(user, principalDetail);
 		return user.getId();
 	}

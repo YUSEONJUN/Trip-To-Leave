@@ -1,7 +1,7 @@
 package com.study.trip.dto.board;
 
 import com.study.trip.domain.board.Board;
-import com.study.trip.domain.user.Users;
+import com.study.trip.domain.user.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ public class BoardSaveRequestDto {
 	private String title;
 	private String content;
 	private int count;
-	private Users user;
+	private User user;
 	private String startday;
 	private String lastday;
 	private int pnum;
@@ -40,7 +40,7 @@ public class BoardSaveRequestDto {
 			.build();
 	}
 
-	public void setUser(Users user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 }

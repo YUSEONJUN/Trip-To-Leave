@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import com.study.trip.domain.BaseTimeEntity;
 import com.study.trip.domain.board.Board;
-import com.study.trip.domain.user.Users;
+import com.study.trip.domain.user.User;
 
 
 import lombok.AllArgsConstructor;
@@ -32,9 +32,9 @@ public class Reply extends BaseTimeEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	private Users user;
+	private User user;
 
-	public void save(Board board, Users user) {
+	public void save(Board board, User user) {
 		this.board = board;
 		this.user = user;
 	}

@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.study.trip.domain.review.Review;
 import com.study.trip.domain.review.ReviewRepository;
-import com.study.trip.domain.user.Users;
+import com.study.trip.domain.user.User;
 import com.study.trip.dto.review.ReviewSaveRequestDto;
 import com.study.trip.dto.review.ReviewUpdateRequestDto;
 
@@ -20,7 +20,7 @@ public class ReviewService {
 	private final ReviewRepository reviewRepository;
 
 	@Transactional
-	public Long save(ReviewSaveRequestDto reviewSaveRequestDto, Users user) {
+	public Long save(ReviewSaveRequestDto reviewSaveRequestDto, User user) {
 		reviewSaveRequestDto.setUser(user);
 		return reviewRepository.save(reviewSaveRequestDto.toEntity()).getId();
 	}
