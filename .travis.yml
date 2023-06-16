@@ -18,9 +18,12 @@ script:
   - "./gradlew clean build"
 
 before_deploy:
+  # AWS CodeDeploy는 jar 파일 인식 불가능 - Zip 파일로 압축
+  # 현재 위치 (프로젝트) 모든 파일을 압축
   - zip -r Trip-to-Leave *
+  # TravisCI가 실행중인 위치에서 dir 생성
   - mkdir -p deploy
-  - mv Trip-to-Leave.zip /deploy/Trip-to-Leave.zip
+  - mv Trip-to-Leave.zip deploy/Trip-to-Leave.zip
 
 deploy:
   - provider: s3
