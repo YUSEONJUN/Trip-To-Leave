@@ -29,7 +29,7 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-    bucket: yuseonjun-springboot2-build
+    bucket: yuseonjun-springboot-build
     region: ap-northeast-2
     skip_cleanup: true
     acl: private
